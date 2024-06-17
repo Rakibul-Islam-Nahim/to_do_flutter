@@ -11,10 +11,47 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final todoList = ToDo.toDoList();
+  List<ToDo> _foundResult = [];
+  final textControler = TextEditingController();
+
+  @override
+  void initState() {
+    _foundResult = todoList;
+    super.initState();
+  }
+
+  void _runFileter(String search) {
+    List<ToDo> result = [];
+    if (search.isEmpty) {
+      result = todoList;
+    } else {
+      result = todoList.where((item)=>item.todotext!.toLowerCase().contains(search.toLowerCase())).toList();
+    }
+    setState(() {
+      _foundResult = result;
+    });
+  }
+
   void _todoChangeState(ToDo todo) {
     setState(() {
       todo.isDone = !todo.isDone;
     });
+  }
+
+  void _todoDeleteItem(String id) {
+    setState(() {
+      todoList.removeWhere((item) => item.id == id);
+    });
+  }
+
+  void _addToDoItem(String task) {
+    setState(() {
+      todoList.add(ToDo(
+          id: DateTime.now().millisecondsSinceEpoch.toString(),
+          todotext: task));
+    });
+    textControler.clear();
   }
 
   @override
@@ -31,8 +68,8 @@ class _HomeState extends State<Home> {
               children: [
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    margin: EdgeInsets.only(bottom: 20, right: 20, left: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    margin: const EdgeInsets.only(bottom: 20, right: 20, left: 20),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       boxShadow: const [
@@ -46,7 +83,8 @@ class _HomeState extends State<Home> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TextField(
-                      decoration: InputDecoration(
+                      controller: textControler,
+                      decoration: const InputDecoration(
                         hintText: 'Add a New Todo Item',
                         border: InputBorder.none,
                       ),
@@ -54,17 +92,19 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(bottom: 20, right: 20),
+                  margin: const EdgeInsets.only(bottom: 20, right: 20),
                   child: ElevatedButton(
-                    child: Text(
-                      '+',
-                      style: TextStyle(fontSize: 40),
-                    ),
-                    onPressed: () {},
+                    onPressed: () {
+                      _addToDoItem(textControler.text);
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: mkBlue,
-                      minimumSize: Size(60, 60),
+                      minimumSize: const Size(60, 60),
                       elevation: 10,
+                    ),
+                    child: const Text(
+                      '+',
+                      style: TextStyle(fontSize: 40),
                     ),
                   ),
                 ),
@@ -102,7 +142,6 @@ class _HomeState extends State<Home> {
   }
 
   Container _buildBody() {
-    final todoList = ToDo.toDoList();
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Column(
@@ -113,8 +152,9 @@ class _HomeState extends State<Home> {
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
             ),
-            child: const TextField(
-              decoration: InputDecoration(
+            child: TextField(
+              onChanged:(value) => _runFileter(value),
+              decoration: const InputDecoration(
                 contentPadding: EdgeInsets.all(5),
                 prefixIcon: Icon(
                   Icons.search,
@@ -142,11 +182,11 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ),
-                for (ToDo todoEach in todoList)
+                for (ToDo todoEach in _foundResult)
                   ToDoitem(
                     todo: todoEach,
                     onToDoChange: _todoChangeState,
-                    onToDoDelete: (){},
+                    onToDoDelete: _todoDeleteItem,
                   )
               ],
             ),

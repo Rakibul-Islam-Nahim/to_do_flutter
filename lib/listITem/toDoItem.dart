@@ -13,7 +13,7 @@ class ToDoitem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
+      margin: const EdgeInsets.only(bottom: 20),
       child: ListTile(
         onTap: () {
           onToDoChange(todo);
@@ -35,8 +35,8 @@ class ToDoitem extends StatelessWidget {
           ),
         ),
         trailing: Container(
-          padding: EdgeInsets.all(0),
-          margin: EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.all(0),
+          margin: const EdgeInsets.symmetric(vertical: 10),
           height: 35,
           width: 35,
           decoration: BoxDecoration(
@@ -46,8 +46,10 @@ class ToDoitem extends StatelessWidget {
           child: IconButton(
             color: Colors.white,
             iconSize: 18,
-            icon: Icon(Icons.delete),
-            onPressed: () {},
+            icon: const Icon(Icons.delete),
+            onPressed: () {
+              onToDoDelete(todo.id);
+            },
           ),
         ),
       ),
