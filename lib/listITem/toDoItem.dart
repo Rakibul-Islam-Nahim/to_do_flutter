@@ -2,27 +2,36 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:nahim_first_kamla/constants/colors.dart';
+import 'package:nahim_first_kamla/listITem/actionMaintain.dart';
 
 class ToDoitem extends StatelessWidget {
-  const ToDoitem({super.key});
+  final ToDo todo;
+  final dynamic onToDoChange;
+  final dynamic onToDoDelete;
+  const ToDoitem({super.key, required this.todo, this.onToDoChange, this.onToDoDelete});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 2,vertical: 10),
+      margin: EdgeInsets.only(bottom: 20),
       child: ListTile(
-        onTap: () {},
+        onTap: () {
+          onToDoChange(todo);
+        },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
         tileColor: Colors.white,
-        leading: Icon(Icons.check_box, color: mkBlue),
+        leading: Icon(
+          todo.isDone? Icons.check_box:Icons.check_box_outline_blank,
+          color: mkBlue,
+        ),
         title: Text(
-          'Check box',
+          todo.todotext,
           style: TextStyle(
             color: mkBlack,
             fontSize: 16,
-            decoration: TextDecoration.lineThrough,
+            decoration: todo.isDone ? TextDecoration.lineThrough : null,
           ),
         ),
         trailing: Container(
@@ -38,7 +47,7 @@ class ToDoitem extends StatelessWidget {
             color: Colors.white,
             iconSize: 18,
             icon: Icon(Icons.delete),
-            onPressed: (){},
+            onPressed: () {},
           ),
         ),
       ),
