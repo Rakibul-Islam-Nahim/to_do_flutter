@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nahim_first_kamla/constants/colors.dart';
 import 'package:nahim_first_kamla/listITem/actionMaintain.dart';
+import 'package:nahim_first_kamla/listITem/navBar.dart';
 import 'package:nahim_first_kamla/listITem/toDoItem.dart';
 
 class Home extends StatefulWidget {
@@ -57,7 +58,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mkBGColor,
+      backgroundColor: hackBlack,
+      drawer: NavBar(),
       appBar: _buildAppBar(),
       body: Stack(
         children: [
@@ -71,7 +73,7 @@ class _HomeState extends State<Home> {
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     margin: const EdgeInsets.only(bottom: 20, right: 20, left: 20),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: hackGreen,
                       boxShadow: const [
                         BoxShadow(
                           color: Colors.grey,
@@ -98,7 +100,7 @@ class _HomeState extends State<Home> {
                       _addToDoItem(textControler.text);
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: mkBlue,
+                      backgroundColor: hackGreen,
                       minimumSize: const Size(60, 60),
                       elevation: 10,
                     ),
@@ -119,15 +121,11 @@ class _HomeState extends State<Home> {
   AppBar _buildAppBar() {
     return AppBar(
       elevation: 0,
-      backgroundColor: mkBGColor,
+      backgroundColor: hackBlack,
+      iconTheme: const IconThemeData(color: hackGreen),
       title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          const Icon(
-            Icons.menu,
-            color: mkBlack,
-            size: 30,
-          ),
           Container(
             height: 40,
             width: 40,
@@ -149,7 +147,7 @@ class _HomeState extends State<Home> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: hackGreen,
               borderRadius: BorderRadius.circular(20),
             ),
             child: TextField(
@@ -179,6 +177,7 @@ class _HomeState extends State<Home> {
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w500,
+                      color: hackGreen
                     ),
                   ),
                 ),

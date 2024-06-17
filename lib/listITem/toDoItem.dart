@@ -21,7 +21,7 @@ class ToDoitem extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
-        tileColor: Colors.white,
+        tileColor: hackDark,
         leading: Icon(
           todo.isDone? Icons.check_box:Icons.check_box_outline_blank,
           color: mkBlue,
@@ -29,7 +29,7 @@ class ToDoitem extends StatelessWidget {
         title: Text(
           todo.todotext,
           style: TextStyle(
-            color: mkBlack,
+            color: mkGrey,
             fontSize: 16,
             decoration: todo.isDone ? TextDecoration.lineThrough : null,
           ),
