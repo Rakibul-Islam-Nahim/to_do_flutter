@@ -16,7 +16,7 @@ class ToDo {
       ToDo(id:'03',todotext: 'Have Bath',isDone: true),
       ToDo(id:'04',todotext: 'Have Lunch',isDone: false),
       ToDo(id:'05',todotext: 'Go to Play',isDone: false),
-      ToDo(id:'06',todotext: 'Come back to home',isDone: true),
+      ToDo(id:'06',todotext: 'Go for study',isDone: true),
     ];
   }
 }

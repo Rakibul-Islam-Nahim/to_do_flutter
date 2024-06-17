@@ -1,16 +1,42 @@
-# nahim_first_kamla
+# Project Name: TO_DO
+"This application is a comprehensive task management tool developed using Flutter. It features functionalities for adding, deleting, searching, and modifying task lists, providing an efficient and user-friendly solution for managing your to-do items."
+<img src = "https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-A new Flutter project.
+## Table of Contents
+* [Prerequisites](#Prerequisites)
+* [Usage](#usage)
+* [License](#license)
 
-## Getting Started
+## Prerequisites
+1. Flutter SDK: Your Local Machine must need to contain Flutter SDK. You may download it from this website ```https://docs.flutter.dev/get-started/install```
+2. Chrome: You need Chrome browser to Lunch the WebApp
+3. Android SDK: You need android sdk to run it in Android Emulator or just simple use your mobile device in USB rendering mode.
+4. Check for issue: You may check your prerequisites by typing the command ```flutter doctor```
 
-This project is a starting point for a Flutter application.
+## Usage
+This app is build for practice purpose only. So it may not provide you a better user experience. But this will help the Developer To build a Simple ToDo app more effectively.
 
-A few resources to get you started if this is your first Flutter project:
+## License
+This project does not contain any copyright license.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contact
+<ul>
+  <li>
+    <a href="https://www.facebook.com/rakib.ul.islam.nahim">
+      <img src="https://img.shields.io/badge/facebook: Rakibul%20Islam%20Nahim-8A2BE2.svg?style=for-the-badge&logo=facebook&logoColor=white" t=facebook"/>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com/in/rakib-nahim-46293a24a">
+      <img src="https://img.shields.io/badge/LinkedIn: Rakib%20Nahim-0077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" t=LinkedIn"/>
+    </a>
+  </li>
+<li>
+<a href="mailto:rakib.ul.islam.nahim.cuet@gmail.com" target="_blank">
+<img src="https://img.shields.io/badge/gmail: rakibulislamnahim-%23EA4335.svg?style=for-the-badge&logo=gmail&logoColor=white" t=mail style="margin-bottom: 5px;"/>
+</a>
+</li>
+</ul>
+<div align="center">
+<b>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ...✨</b>
+</div>
