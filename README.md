@@ -38,5 +38,4 @@ This project does not contain any copyright license.
 </li>
 </ul>
 <div align="center">
-<b>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ...✨</b>
 </div>
