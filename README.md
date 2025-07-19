@@ -16,9 +16,6 @@
 ## Usage
 This app is build for practice purpose only. So it may not provide you a better user experience. But this will help the Developer To build a Simple ToDo app more effectively.
 
-## License
-This project does not contain any copyright license.
-
 ## Contact
 <ul>
   <li>
